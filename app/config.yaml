@@ -1,0 +1,7 @@
+cpu_threshold: 75
+memory_threshold: 75
+check_interval: 5
+service_name: python
+
+slack:
+  enabled: false

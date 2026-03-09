@@ -1,0 +1,7 @@
+version: "3"
+services:
+  auto-healer:
+    build: .
+    container_name: auto-healer_from_compose
+    volumes:
+      - ./logs:/app/logs
