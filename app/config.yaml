@@ -1,5 +1,5 @@
-cpu_threshold: 75
-memory_threshold: 75
+cpu_threshold: 20
+memory_threshold: 20
 check_interval: 5
 service_name: python
 

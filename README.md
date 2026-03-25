@@ -11,5 +11,5 @@ image_name: auto-healer
 container_name: auto-healer
 
 # METHOD 2
-# Run below command which makes use of docker-compose.yaml command to perform the same operation as above command
+# Run below command which makes use of docker-compose.yaml file to perform the same operation as above command
 docker compose up
