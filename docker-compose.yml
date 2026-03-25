@@ -1,7 +1,17 @@
-version: "3"
+# version: "3"
+# services:
+#   auto-healer:
+#     build: .
+#     container_name: auto-healer_from_compose
+#     volumes:
+#       - ./logs:/app/logs
+
+version: "3.9"
+
 services:
   auto-healer:
-    build: .
-    container_name: auto-healer_from_compose
+    image: dockermjrr/auto-healer
+    container_name: auto-healer-container
     volumes:
       - ./logs:/app/logs
+    restart: unless-stopped
