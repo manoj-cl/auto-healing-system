@@ -1,3 +1,11 @@
+# Virtual env
 venv/
-auto-healing-system/app/__pycache__/
-auto-healing-system/app/*.pyc
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Optional
+.env
