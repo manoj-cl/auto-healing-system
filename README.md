@@ -17,3 +17,13 @@ Run below command which makes use of docker-compose.yaml file to perform the sam
 ```
 docker compose up
 ```
+
+**STRESS TEST**
+Run below command to enter the bash command-line of the container:
+```
+docker exec -it <container-name> bash
+```
+Run below command to initiate the stress to increase CPU and memory load on the container:
+```
+python /app/stress_test.py
+```
