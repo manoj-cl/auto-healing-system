@@ -14,4 +14,6 @@ Provide the values as:
 
 # METHOD 2
 Run below command which makes use of docker-compose.yaml file to perform the same operation as above command
+```
 docker compose up
+```ß
