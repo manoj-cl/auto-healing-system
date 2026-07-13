@@ -3,9 +3,9 @@ Run this project using below command.
 ```
 docker run -d --name <image_name> -v $(pwd)/logs:/app/logs <container_name>
 ```
-**WHAT THIS DOES:**
+**WHAT THIS DOES** \
 $(pwd)/logs   → your Mac folder \
-/app/logs     → container folder
+/app/logs     → container folder \
 Now they are connected.  
 
 Provide the values as:  
