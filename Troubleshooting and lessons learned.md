@@ -1,34 +1,8 @@
 ## Troubleshooting & Lessons Learned
 
-During development of the **Python Auto-Healing System**, several real-world DevOps challenges were encountered while containerizing and running the application using Docker and Docker Compose.
+During development of the **Python Auto-Healing System**, several real-world challenges were encountered while containerizing and running the application using Docker and Docker Compose.
 
 ---
-
-### 1. Python Version Conflict on macOS
-
-**Issue**
-
-After installing a newer Python version, the system still showed:
-
-```
-python3 --version
-Python 3.9.6
-```
-
-**Cause**
-
-macOS includes a system Python installed via developer command-line tools, which takes precedence in the system PATH.
-
-**Resolution**
-
-Installed Python using Homebrew and used a virtual environment.
-
-```
-brew install python
-```
-
----
-
 ### 2. Docker Container Running but No Logs Appearing
 
 **Issue**
