@@ -3,7 +3,7 @@
 During development of the **Python Auto-Healing System**, several real-world challenges were encountered while containerizing and running the application using Docker and Docker Compose.
 
 ---
-### 2. Docker Container Running but No Logs Appearing
+### 1. Docker Container Running but No Logs Appearing
 
 **Issue**
 
@@ -25,7 +25,7 @@ Added a **console handler** to send logs to stdout.
 
 ---
 
-### 3. Duplicate Log Entries
+### 2. Duplicate Log Entries
 
 **Issue**
 
@@ -53,7 +53,7 @@ if logger.handlers:
 
 ---
 
-### 4. Logs Not Visible on Host Machine
+### 3. Logs Not Visible on Host Machine
 
 **Issue**
 
@@ -91,7 +91,7 @@ Container Directory: /app/logs
 
 ---
 
-### 5. Logs Not Showing When Using Docker Compose
+### 4. Logs Not Showing When Using Docker Compose
 
 **Issue**
 
