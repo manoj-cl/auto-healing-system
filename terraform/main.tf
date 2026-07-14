@@ -1,3 +1,5 @@
+# ------------------- SECURITY GROUP -------------------
+
 resource "aws_security_group" "auto_healer_sg" {
   name        = "auto-healer-sg"
   description = "Security group for Auto-Healing System"
@@ -21,3 +23,14 @@ resource "aws_security_group" "auto_healer_sg" {
     Name = "auto-healer-sg"
   }
 }
+
+# ------------------- KEY PAIR -------------------
+
+resource "aws_key_pair" "auto_healer_key" {
+    key_name   = var.key_name
+    public_key = file(var.public_key_path)  # It does not upload the file itself—only the public key content.
+    tags = {
+        Name = "auto-healer-key"
+    }
+}
+
