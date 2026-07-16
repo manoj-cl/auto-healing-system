@@ -1,0 +1,23 @@
+---
+
+- name: Create application directory
+  file:
+    path: "{{ app_directory }}"
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: '0755'
+
+- name: Copy docker-compose.yml
+  template:
+    src: templates/docker-compose.yml.j2
+    dest: "{{ app_directory }}/docker-compose.yml"
+    owner: ubuntu
+    group: ubuntu
+    mode: '0644'
+
+- name: Start application
+  shell: |
+    docker compose up -d
+  args:
+    chdir: "{{ app_directory }}"
