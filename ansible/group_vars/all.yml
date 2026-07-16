@@ -1,0 +1,4 @@
+---
+app_directory: /opt/auto-healer
+docker_image: dockermjrr/auto-healer:1.1
+container_name: auto-healer-container

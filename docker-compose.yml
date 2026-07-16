@@ -6,11 +6,10 @@
 #     volumes:
 #       - ./logs:/app/logs
 
-version: "3.9"
 
 services:
   auto-healer:
-    image: dockermjrr/auto-healer
+    image: dockermjrr/auto-healer:1.1
     container_name: auto-healer-container
     volumes:
       - ./logs:/app/logs

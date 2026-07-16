@@ -1,0 +1,13 @@
+---
+# Docker Compose - A file to define and run multi-container Docker applications. 
+# Different from Dockerfile, which is used to build a single image
+# docker-compose.yml allows you to define multiple services, networks, and volumes in a single file.
+# In this case, it defines a single service for the auto-healer application.
+
+services:
+  auto-healer:
+    image: "{{ docker_image }}"  # Use the image from Docker Hub
+    container_name: "{{ container_name }}"     # Use a custom name for the container 
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped   # Ensure the container restarts unless it is explicitly stopped

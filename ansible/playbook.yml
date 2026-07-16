@@ -1,0 +1,8 @@
+---
+- name: Configure Auto-Healer Server
+  hosts: auto_healer
+  become: true
+
+  roles:
+    - docker
+    - auto-healer
