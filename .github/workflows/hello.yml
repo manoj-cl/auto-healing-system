@@ -6,18 +6,21 @@ on:
       - main
 
 jobs:
-  hello:
+  build:
     runs-on: ubuntu-latest
     steps: 
 
       - name: Checkout repository
         uses: actions/checkout@v4   # A standard GitHub Actions action that clones your repository into the workflow runner's working directory, allowing subsequent steps to access and work with your code files.
 
-      - name: List repository files
-        run: ls -R
-      
-      - name: Print current working directory
-        run: pwd
-      
-      - name: Print message
-        run: echo "Repository downloaded successfully"
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        run: docker buildx build \
+              --platform linux\amd64 \
+              -t auto-healer:test \
+              --load \
+              .
+      - name: List Docker images
+        run: docker images
