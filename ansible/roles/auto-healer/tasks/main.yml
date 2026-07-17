@@ -8,15 +8,17 @@
     group: ubuntu
     mode: '0755'
 
-- name: Copy docker-compose.yml
+- name: Generate docker-compose.yml
   template:
-    src: templates/docker-compose.yml.j2
+    src: docker-compose.yml.j2
     dest: "{{ app_directory }}/docker-compose.yml"
     owner: ubuntu
     group: ubuntu
     mode: '0644'
+  notify:
+    - Restart Auto-healer
 
-- name: Start application
+- name: Ensure application is started
   shell: |
     docker compose up -d
   args:

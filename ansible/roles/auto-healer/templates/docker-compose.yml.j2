@@ -10,4 +10,4 @@ services:
     container_name: "{{ container_name }}"     # Use a custom name for the container 
     volumes:
       - ./logs:/app/logs
-    restart: unless-stopped   # Ensure the container restarts unless it is explicitly stopped
+    restart: "{{ restart_policy }}"  # Ensure the container restarts unless it is explicitly stopped
