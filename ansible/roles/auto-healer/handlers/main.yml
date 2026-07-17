@@ -1,6 +1,0 @@
----
-- name: Restart Auto-healer
-  shell: docker compose up -d 
-  args:
-    chdir: "{{ app_directory }}"
-  

@@ -15,11 +15,8 @@
     owner: ubuntu
     group: ubuntu
     mode: '0644'
-  notify:
-    - Restart Auto-healer
 
 - name: Ensure application is started
-  shell: |
-    docker compose up -d
-  args:
-    chdir: "{{ app_directory }}"
+  community.docker.docker_compose_v2:
+    project_src: "{{ app_directory }}"
+    state: present
