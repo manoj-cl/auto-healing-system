@@ -9,5 +9,15 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps: 
-      - name: Print a message
-        run: echo "Hello Manoj! GitHub Actions is running."
+
+      - name: Checkout repository
+        uses: actions/checkout@v4   # A standard GitHub Actions action that clones your repository into the workflow runner's working directory, allowing subsequent steps to access and work with your code files.
+
+      - name: List repository files
+        run: ls -R
+      
+      - name: Print current working directory
+        run: pwd
+      
+      - name: Print message
+        run: echo "Repository downloaded successfully"
