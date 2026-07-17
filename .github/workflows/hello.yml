@@ -17,7 +17,8 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build Docker image
-        run: docker buildx build \
+        run: |
+              docker buildx build \
               --platform linux\amd64 \
               -t auto-healer:test \
               --load \
