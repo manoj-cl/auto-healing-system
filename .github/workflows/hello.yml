@@ -36,7 +36,8 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: dockermjrr/auto-healer:latest
+          tags: |
+                dockermjrr/auto-healer:latest
                 dockermjrr/auto-healer:${{ github.sha }}
 
       - name: List Docker images
