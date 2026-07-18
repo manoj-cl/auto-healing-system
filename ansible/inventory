@@ -1,2 +1,2 @@
 [auto_healer]
-13.201.222.88 ansible_user=ubuntu ansible_ssh_private_key_file=/Users/manojrrao/.ssh/id_ed25519
+3.110.48.222 ansible_user=ubuntu ansible_ssh_private_key_file=/Users/manojrrao/.ssh/id_ed25519

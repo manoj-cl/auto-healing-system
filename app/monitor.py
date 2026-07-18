@@ -18,6 +18,7 @@ def check_system():
     cpu = psutil.cpu_percent(interval=1)
     mem = psutil.virtual_memory().percent
 
+    logger.info("Application version 2")
     logger.info(f"CPU={cpu}% MEM={mem}%")
 
     if cpu > CPU_LIMIT or mem > MEM_LIMIT:
