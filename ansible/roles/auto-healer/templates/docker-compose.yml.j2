@@ -6,8 +6,13 @@
 
 services:
   auto-healer:
+
     image: "{{ docker_image }}"  # Use the image from Docker Hub
     container_name: "{{ container_name }}"     # Use a custom name for the container 
+
+    environment:
+      APP_VERSION: latest 
+
     volumes:
       - ./logs:/app/logs
     restart: "{{ restart_policy }}"  # Ensure the container restarts unless it is explicitly stopped

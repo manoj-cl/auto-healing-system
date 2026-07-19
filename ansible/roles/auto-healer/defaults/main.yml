@@ -1,3 +1,4 @@
+app_version: latest
 docker_image: dockermjrr/auto-healer:latest
 container_name: auto-healer-container
 restart_policy: unless-stopped
