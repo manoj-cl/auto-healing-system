@@ -4,8 +4,12 @@ import yaml
 from healer import restart_service
 from alerts import send_slack_alert
 from logger import setup_logger
+import os 
 
 logger = setup_logger()
+
+VERSION = os.getenv("APP_VERSION", "development")
+logger.info(f"Running Auto-healer version: {VERSION}")
 
 with open("config.yaml") as f:
     config = yaml.safe_load(f)
@@ -18,7 +22,6 @@ def check_system():
     cpu = psutil.cpu_percent(interval=1)
     mem = psutil.virtual_memory().percent
 
-    logger.info("Application version 3")
     logger.info(f"CPU={cpu}% MEM={mem}%")
 
     if cpu > CPU_LIMIT or mem > MEM_LIMIT:

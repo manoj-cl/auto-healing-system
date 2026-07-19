@@ -6,6 +6,7 @@ on:
       - main
 
 jobs:
+  # Build and push Docker image to Dockerhub repository
   build:
     runs-on: ubuntu-latest
     steps: 
@@ -39,6 +40,7 @@ jobs:
           tags: |
                 dockermjrr/auto-healer:latest
                 dockermjrr/auto-healer:${{ github.sha }}
+                dockermjrr/auto-healer:${{ github.run_number }}
 
       - name: List Docker images
         run: docker images
@@ -49,6 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
+      # Deploy using SSH to EC2 and pull the image and run the container
       - name: Deploy application
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -59,3 +62,5 @@ jobs:
             cd /opt/auto-healer
             docker compose pull 
             docker compose up -d --force-recreate
+            sleep 10
+            docker ps
